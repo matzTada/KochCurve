@@ -42,6 +42,8 @@ function move(step) {
 		if(penUpDown == true){
 			point(x, y);
 		}
+		delay = new p5.Delay();		
+		delay.delayTime(1);
 	}
 }
 

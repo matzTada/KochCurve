@@ -3,18 +3,16 @@ var y = 0;
 var direction = 0; // degrees 0 - 360
 var penUpDown = true;
 
-var STEP_VALUE = 1;
-
 function setup(){
 	// initialize
 	createCanvas(400, 400); 
 	// user
-	stroke(0, 0, 255); // stroke('blue');
-	pen = true;
+	penUpDown = true;
 	x = 0;
 	y = 200;
-	direction = 0;
 	background(250);
+	direction = 0;
+	stroke(0, 0, 255); // stroke('blue');
 	koch(400, 5);
 }
 

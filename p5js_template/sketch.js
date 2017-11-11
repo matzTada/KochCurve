@@ -1,3 +1,8 @@
+var x = 0;
+var y = 0;
+var direction = 0; // degrees 0 - 360
+var penUpDown = true;
+
 function setup(){
 	// initialize
 	createCanvas(400, 400); 

@@ -1,4 +1,4 @@
-# SieveOfEratosthenes
+# KochCurve
 new comer education of JavaScript
 
 ## JavaScript

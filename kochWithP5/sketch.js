@@ -9,13 +9,13 @@ function setup(){
 	// initialize
 	createCanvas(400, 400); 
 	// user
-	stroke(255, 0, 0); // stroke('red');
+	stroke(0, 0, 255); // stroke('blue');
 	pen = true;
 	x = 0;
 	y = 200;
 	direction = 0;
 	background(250);
-	koch(100, 6);
+	koch(400, 5);
 }
 
 function draw() {
@@ -24,11 +24,11 @@ function draw() {
 function koch(length, n){
 	if(n > 1){
 		koch(length / 3, n - 1);
-		turn(60);
+		turn(-60);
 		koch(length / 3, n - 1);
-		turn(-120);
+		turn(120);
 		koch(length / 3, n - 1);
-		turn(60);
+		turn(-60);
 		koch(length / 3, n - 1);
 	}else{
 		move(length);
@@ -36,15 +36,13 @@ function koch(length, n){
 }
 
 function move(step) {
-	for(var i = 0; i < step; i++){
-		x += cos(radians(direction)) * STEP_VALUE;
-		y += sin(radians(direction)) * STEP_VALUE;
-		if(penUpDown == true){
-			point(x, y);
-		}
-		delay = new p5.Delay();		
-		delay.delayTime(1);
+	var dx = cos(radians(direction)) * step;
+	var dy = sin(radians(direction)) * step;
+	if(penUpDown == true){
+		line(x, y, x + dx, y + dy);
 	}
+	x += dx;
+	y += dy;
 }
 
 function turn(angle){
